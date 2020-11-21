@@ -1,0 +1,99 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+
+* {
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
+body {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: 600;  
+  margin: 0 auto;  
+}
+
+.goods_cards {
+  display: flex;
+  justify-content: center;
+  width: 1200px;
+  margin: 10px auto;
+}
+
+.goods_card { 
+  box-sizing: border-box;
+  width: 200px;
+  margin: auto 20px;
+  border: 1px solid red;
+}
+
+.goods_img {
+  display: block;
+  box-sizing: border-box;
+  width: 190px;
+  height: 190px;
+  margin: 5px auto;  
+}
+
+.about_good {  
+  box-sizing: border-box;
+  width: 190px;  
+  margin: 5px auto;
+  text-align: center;
+  border: 1px solid red;   
+}
+
+.card_button {
+  box-sizing: border-box;
+  padding: 5px;  
+  margin: 5px;
+  text-align: center;
+  color: white;
+  border: 2px solid red;
+  background-color: blue;
+}
+
+.card_button:active {  
+  border: 2px solid yellow;
+  background-color: rebeccapurple;
+}
+
+.basket_card {
+  box-sizing: border-box;
+  width: 440px;
+  margin: 10px auto;
+  border: 1px solid red;
+}
+
+.basket_content {
+  box-sizing: border-box;
+  width: 430px;
+  min-height: 20px;
+  margin: 5px auto;
+  text-align: center;
+  border: 1px solid red;
+}
+
+.basket_button {
+  box-sizing: border-box;
+  padding: 5px;  
+  margin: 5px;
+  text-align: center;
+  color: white;
+  border: 2px solid red;
+  background-color: blue;
+}
+
+.basket_button:active {  
+  border: 2px solid yellow;
+  background-color: rebeccapurple;
+}
+
+.basket_content_card {
+  box-sizing: border-box;
+  padding: 5px;  
+  margin: 5px;
+  text-align: center;  
+  border: 1px solid red;  
+}
