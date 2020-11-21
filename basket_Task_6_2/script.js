@@ -57,7 +57,9 @@ let Basket = {
         buttonEvent.addEventListener('click', () => {
             document.querySelector('.basket_content').remove();
             document.querySelector('.basket_card').insertAdjacentHTML('afterbegin', '<div class="basket_content">Здесь будут ваши покупки!</div>');
+            this.basketGoods = [];
         })
+
     },
 
     outputBasketContent() {
