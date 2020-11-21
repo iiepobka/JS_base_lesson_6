@@ -37,7 +37,16 @@ let Goods = {
     addEventCardButton(i) {
         let buttonEvent = document.querySelectorAll('.card_button');
         buttonEvent[i].addEventListener('click', () => {
-            Basket.basketGoods.push(this.marketGoods[i]);
+            let goodInBasket = true;
+            for (let x = 0; x < Basket.basketGoods.length; x++) {
+                if (this.marketGoods[i] === Basket.basketGoods[x]) {
+                    Basket.basketGoods[x].quantity += 1;
+                    goodInBasket = false;
+                }
+            }
+            if (goodInBasket) {
+                Basket.basketGoods.push(this.marketGoods[i]);
+            }
             Basket.outputBasketContent();
         })
     }
@@ -58,8 +67,10 @@ let Basket = {
             document.querySelector('.basket_content').remove();
             document.querySelector('.basket_card').insertAdjacentHTML('afterbegin', '<div class="basket_content">Здесь будут ваши покупки!</div>');
             this.basketGoods = [];
+            for (let i = 0; i < Goods.marketGoods.length; i++) {
+                Goods.marketGoods[i].quantity = 1;
+            }
         })
-
     },
 
     outputBasketContent() {
@@ -69,13 +80,11 @@ let Basket = {
         }
         let totalPrice = 0;
         for (let i = 0; i < this.basketGoods.length; i++) {
-            totalPrice += this.basketGoods[i].price;
-            document.querySelector('.basket_content').insertAdjacentHTML('beforeend', `<div class="basket_content_card">товар: ${this.basketGoods[i].product_name}<br>цена: ${this.basketGoods[i].price}</div>`);
+            totalPrice += this.basketGoods[i].price * this.basketGoods[i].quantity;
+            document.querySelector('.basket_content').insertAdjacentHTML('beforeend', `<div class="basket_content_card">товар: ${this.basketGoods[i].product_name}<br>цена: ${this.basketGoods[i].price}<br>количество: ${this.basketGoods[i].quantity}</div>`);
         }
         document.querySelector('.basket_content').insertAdjacentHTML('beforeend', `<div class="basket_content_card">Цена за все товары: ${totalPrice}</div>`);
-    },
-
-
+    }
 }
 
 Goods.genGoodsCard();
